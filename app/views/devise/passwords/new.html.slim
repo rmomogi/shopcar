@@ -1,0 +1,17 @@
+= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|   
+	= devise_error_messages!
+
+	.row
+		.col-md-6.offset-md-3.text-center
+			h5 Esqueceu a senha?
+
+	.row 
+		.col-md-6.offset-md-3
+			.form-group
+				= f.label :email
+				= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"
+	
+	.row 
+		.col-md-6.offset-md-3
+			= f.submit "Envie as instruções", class: "btn btn-sm btn-success"
+			= render "devise/shared/links"
